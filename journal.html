@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まるのご当地ちいかわめぐり｜旅の日記</title>
+<style>
+  :root{ --ink:#2b2620; --muted:#7a7264; --paper:#fbf7ef; --card:#fffdf8; --line:#e5dcc9; --accent:#b3402e; --accent2:#3d6b4f; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif; line-height:1.85; }
+  .wrap{ max-width:760px; margin:0 auto; padding:28px 18px 64px; }
+  header.top{ text-align:center; padding:26px 10px 8px; }
+  header.top .kicker{ font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; }
+  header.top h1{ font-size:29px; margin:8px 0 6px; line-height:1.35; }
+  header.top p.lead{ color:var(--muted); font-size:14.5px; margin:4px auto; max-width:560px; }
+  .stats{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:16px 0 4px; }
+  .stats span{ background:#fff; border:1px solid var(--line); border-radius:999px; padding:5px 13px; font-size:13px; font-weight:700; }
+  .stats span b{ color:var(--accent); }
+  nav.links{ text-align:center; margin:10px 0 2px; font-size:13.5px; }
+  nav.links a{ color:var(--accent2); font-weight:700; }
+  article.day{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px 22px 20px; margin:26px 0; box-shadow:0 2px 10px rgba(90,70,40,.05); }
+  article.day h2{ font-size:21px; margin:0 0 2px; line-height:1.4; }
+  article.day h2 .dnum{ color:var(--accent); }
+  article.day .date{ color:var(--muted); font-size:13px; font-weight:700; letter-spacing:.06em; }
+  article.day p{ margin:10px 0; font-size:15.5px; }
+  .photos{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+  .photos figure{ margin:0; }
+  .photos img{ width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; aspect-ratio:4/3; background:#eee; }
+  .photos figcaption{ font-size:12px; color:var(--muted); text-align:center; margin-top:4px; }
+  h3.sub{ font-size:15px; margin:18px 0 6px; color:var(--accent2); }
+  ul.items{ margin:4px 0 8px; padding-left:20px; font-size:14.5px; }
+  ul.items li{ margin:3px 0; }
+  table.acct{ width:100%; border-collapse:collapse; font-size:14px; margin:6px 0 4px; }
+  table.acct td{ padding:5px 4px; border-bottom:1px dashed var(--line); }
+  table.acct td:last-child{ text-align:right; font-weight:700; white-space:nowrap; }
+  table.acct tr.total td{ border-bottom:none; border-top:2px solid var(--line); font-weight:700; }
+  .stay{ font-size:14.5px; }
+  .note{ font-size:13px; color:var(--muted); }
+  footer{ text-align:center; color:var(--muted); font-size:13px; margin-top:34px; }
+  @media (max-width:560px){ .photos{ grid-template-columns:1fr 1fr; } header.top h1{ font-size:24px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">MARU'S JOURNEY JOURNAL</div>
+    <h1>まるのご当地ちいかわめぐり｜旅の日記</h1>
+    <p class="lead">大阪上本町を拠点に、電車・バス・徒歩だけで全国をまわり、ご当地ちいかわグッズとご当地グルメを集める旅の日記です。1日ごとに、その日の出来事と収支を記録しています。</p>
+    <div class="stats">
+      <span>到達 <b>12 / 47</b> 都道府県</span>
+      <span>グッズ入手 <b>6</b> 県</span>
+      <span>グルメのみ <b>6</b> 県</span>
+      <span>累計（運賃＋宿泊）<b>89,924円</b></span>
+    </div>
+    <nav class="links">旅の様子は地図でも見られます → <a href="https://noyama-shiitake.github.io/maru-trip-player/prototype.html">まるの旅（地図）</a></nav>
+  </header>
+
+  <article class="day" id="day1">
+    <div class="date">2026年11月10日（火）</div>
+    <h2><span class="dnum">1日目</span> 奈良・京都の旅（帰宅）</h2>
+    <p>旅の始まりは夜でした。19時50分、大阪上本町を出発。近鉄電車で奈良へ向かい、20時24分に近鉄奈良駅に着きました。奈良公園では鹿たちがのんびりしていて、興福寺と東大寺をまわりながら、最初のご当地ちいかわ、奈良限定「鹿」ぬいぐるみキーチェーンをゲット。柿の葉寿司もいただきました。</p>
+    <p>そのまま大和西大寺で乗り換えて京都へ。21時50分に京都駅に着いて、京都限定「抹茶ソフト」のうさぎと、生八つ橋を確保。23時38分、大阪上本町に帰着しました。初日から2県制覇です。</p>
+    <div class="photos">
+      <figure><img src="photos/01.jpg" alt="近鉄奈良駅"><figcaption>近鉄奈良駅</figcaption></figure>
+      <figure><img src="photos/02.jpg" alt="奈良公園の鹿と"><figcaption>奈良公園の鹿と</figcaption></figure>
+    </div>
+    <h3 class="sub">食べたもの・買ったもの</h3>
+    <ul class="items">
+      <li>ご当地ちいかわ：奈良限定「鹿」ぬいぐるみキーチェーン</li>
+      <li>ご当地グルメ：柿の葉寿司（奈良）</li>
+      <li>ご当地ちいかわ：京都限定「抹茶ソフト」うさぎ</li>
+      <li>ご当地グルメ：生八つ橋（京都）</li>
+    </ul>
+    <h3 class="sub">収支</h3>
+    <table class="acct">
+      <tr><td>運賃（近鉄ほか）</td><td>2,580円</td></tr>
+      <tr><td>宿泊（自宅）</td><td>0円</td></tr>
+      <tr class="total"><td>1日目 合計</td><td>2,580円</td></tr>
+      <tr><td>累計</td><td>2,580円</td></tr>
+    </table>
+    <h3 class="sub">今夜の宿</h3>
+    <p class="stay">大阪上本町（自宅）— 0円</p>
+  </article>
+
+  <article class="day" id="day2">
+    <div class="date">2026年11月11日（水）</div>
+    <h2><span class="dnum">2日目</span> 兵庫・岡山の旅（岡山泊）</h2>
+    <p>朝9時すぎに上本町を出て、地下鉄とJRを乗り継いで三ノ宮へ。バスでイオンモール神戸北まで足をのばし、ちいかわ POP UP STORE で神戸限定のセーラーちいかわをゲットしました。お昼はそばめしです。</p>
+    <p>夕方、新神戸から新幹線で岡山へ。岡山駅で岡山限定「桃から生まれた桃太郎」ダイカットキーホルダーを入手し、えびめしを食べて、ヴィアイン岡山にチェックイン。西へ西へと進み始めた日でした。</p>
+    <div class="photos">
+      <figure><img src="photos/07.jpg" alt="イオンモール神戸北"><figcaption>イオンモール神戸北</figcaption></figure>
+      <figure><img src="photos/08.jpg" alt="岡山駅"><figcaption>岡山駅</figcaption></figure>
+    </div>
+    <h3 class="sub">食べたもの・買ったもの</h3>
+    <ul class="items">
+      <li>ご当地ちいかわ：神戸限定 セーラーちいかわ（ちいかわ POP UP STORE、イオンモール神戸北）</li>
+      <li>ご当地グルメ：そばめし（神戸）</li>
+      <li>ご当地ちいかわ：岡山限定「桃から生まれた桃太郎」ダイカットキーホルダー</li>
+      <li>ご当地グルメ：えびめし（岡山）</li>
+    </ul>
+    <h3 class="sub">収支</h3>
+    <table class="acct">
+      <tr><td>運賃（地下鉄・JR・バス・新幹線）</td><td>8,290円</td></tr>
+      <tr><td>宿泊（ヴィアイン岡山）</td><td>5,720円（推定）</td></tr>
+      <tr class="total"><td>2日目 合計</td><td>14,010円</td></tr>
+      <tr><td>累計</td><td>16,590円</td></tr>
+    </table>
+    <h3 class="sub">今夜の宿</h3>
+    <p class="stay">ヴィアイン岡山 — 5,720円（推定）</p>
+  </article>
+
+  <article class="day" id="day3">
+    <div class="date">2026年11月12日（木）</div>
+    <h2><span class="dnum">3日目</span> 広島・山口・福岡の旅（博多泊）</h2>
+    <p>岡山を9時04分に出て、新幹線で広島へ。駅の ekie で広島限定「牡蠣」ダイカットキーホルダーをゲットし、広島電鉄で原爆ドームへ。広島風お好み焼きも味わいました。</p>
+    <p>午後は新山口へ。「ふく」のちいかわは駅で確認できず、山口県はグルメのみの記録に。瓦そばをいただきました。夕方の新幹線で博多に着くと、博多駅で福岡限定「あまおう」ぬいぐるみキーチェーンを入手。夜は博多ラーメンで締めました。3県をまわった、いちばん移動の多い日です。</p>
+    <div class="photos">
+      <figure><img src="photos/12.jpg" alt="原爆ドーム"><figcaption>原爆ドーム</figcaption></figure>
+      <figure><img src="photos/14.jpg" alt="博多駅"><figcaption>博多駅</figcaption></figure>
+    </div>
+    <h3 class="sub">食べたもの・買ったもの</h3>
+    <ul class="items">
+      <li>ご当地ちいかわ：広島限定「牡蠣」ダイカットキーホルダー（広島駅 ekie）</li>
+      <li>ご当地グルメ：広島風お好み焼き</li>
+      <li>ご当地グルメ：瓦そば（山口）※グッズは駅で確認できず、グルメのみ</li>
+      <li>ご当地ちいかわ：福岡限定「あまおう」ぬいぐるみキーチェーン（博多駅）</li>
+      <li>ご当地グルメ：博多ラーメン</li>
+    </ul>
+    <h3 class="sub">収支</h3>
+    <table class="acct">
+      <tr><td>運賃（新幹線・広島電鉄ほか）</td><td>18,060円</td></tr>
+      <tr><td>宿泊（博多ターミナルホテル）</td><td>5,300円（推定）</td></tr>
+      <tr class="total"><td>3日目 合計</td><td>23,360円</td></tr>
+      <tr><td>累計</td><td>39,950円</td></tr>
+    </table>
+    <h3 class="sub">今夜の宿</h3>
+    <p class="stay">博多ターミナルホテル — 5,300円（推定）</p>
+  </article>
+
+  <article class="day" id="day4">
+    <div class="date">2026年11月13日（金）</div>
+    <h2><span class="dnum">4日目</span> 佐賀・長崎の旅（長崎泊）</h2>
+    <p>博多を10時03分に出て、10時41分に佐賀へ。佐賀では いかしゅうまい を堪能しました（佐賀はグルメのみの記録です）。12時33分発のリレーかもめ25号で武雄温泉へ、乗り換えて13時24分に長崎に着きました。</p>
+    <p>長崎では蘇州林のちゃんぽんを食べて、眼鏡橋をのんびり散策。19時にホテルセントヒル長崎へチェックインしたあと、夜は稲佐山山頂展望台まで上がって夜景を見ました。長崎もグルメのみですが、忘れられない夜になりました。</p>
+    <div class="photos">
+      <figure><img src="photos/18.jpg" alt="眼鏡橋"><figcaption>眼鏡橋</figcaption></figure>
+      <figure><img src="photos/20.jpg" alt="稲佐山の夜景"><figcaption>稲佐山の夜景</figcaption></figure>
+    </div>
+    <h3 class="sub">食べたもの・買ったもの</h3>
+    <ul class="items">
+      <li>ご当地グルメ：いかしゅうまい（佐賀）※グルメのみ</li>
+      <li>ご当地グルメ：ちゃんぽん（蘇州林、長崎）※グルメのみ</li>
+    </ul>
+    <h3 class="sub">収支</h3>
+    <table class="acct">
+      <tr><td>運賃（特急リレーかもめほか）</td><td>6,680円</td></tr>
+      <tr><td>宿泊（ホテルセントヒル長崎）</td><td>3,890円（推定）</td></tr>
+      <tr class="total"><td>4日目 合計</td><td>10,570円</td></tr>
+      <tr><td>累計</td><td>50,520円</td></tr>
+    </table>
+    <h3 class="sub">今夜の宿</h3>
+    <p class="stay">ホテルセントヒル長崎 — 3,890円（推定）</p>
+  </article>
+
+  <article class="day" id="day5">
+    <div class="date">2026年11月14日（土）</div>
+    <h2><span class="dnum">5日目</span> 熊本の旅（熊本泊）</h2>
+    <p>長崎駅前を10時50分に出る高速バス「りんどう号」に乗り、14時36分に熊本駅前へ。約3時間46分のバス旅でした。熊本では市電に乗って通町筋のくまモンスクエアとアミュプラザくまもとへ。市電の乗り心地がとても良かったです。</p>
+    <p>肥後よかモン市場などを探しましたが、熊本限定のちいかわグッズは見つからず、熊本県はグルメのみの記録に。熊本ラーメンをいただいて、19時に東横INN熊本駅前へチェックインしました。</p>
+    <div class="photos">
+      <figure><img src="photos/21.jpg" alt="熊本駅"><figcaption>熊本駅</figcaption></figure>
+      <figure><img src="photos/23.jpg" alt="くまモンスクエア"><figcaption>くまモンスクエア</figcaption></figure>
+    </div>
+    <h3 class="sub">食べたもの・買ったもの</h3>
+    <ul class="items">
+      <li>ご当地グルメ：熊本ラーメン ※グッズは見つからず、グルメのみ</li>
+    </ul>
+    <h3 class="sub">収支</h3>
+    <table class="acct">
+      <tr><td>運賃（高速バス・市電）</td><td>4,600円</td></tr>
+      <tr><td>宿泊（東横INN熊本駅前）</td><td>5,828円（推定）</td></tr>
+      <tr class="total"><td>5日目 合計</td><td>10,428円</td></tr>
+      <tr><td>累計</td><td>60,948円</td></tr>
+    </table>
+    <h3 class="sub">今夜の宿</h3>
+    <p class="stay">東横INN熊本駅前 — 5,828円（推定）</p>
+  </article>
+
+  <article class="day" id="day6">
+    <div class="date">2026年11月15日（日）</div>
+    <h2><span class="dnum">6日目</span> 大分の旅（大分泊）</h2>
+    <p>熊本駅前を10時39分に出る高速バス「やまびこ号」で大分へ。途中、道の駅すごうで30分の休憩をはさみ、14時39分に大分に着きました。阿蘇を越える山道のドライブでした。</p>
+    <p>大分駅の豊後にわさき市場とアミュプラザ大分で温泉モチーフのご当地ちいかわを探しましたが、買える在庫は確認できず、大分県もグルメのみの記録に。夕方は「こつこつ庵」でとり天定食（1,100円）をいただきました。</p>
+    <div class="photos">
+      <figure><img src="photos/25.jpg" alt="大分駅"><figcaption>大分駅</figcaption></figure>
+      <figure><img src="photos/28.jpg" alt="こつこつ庵"><figcaption>こつこつ庵</figcaption></figure>
+    </div>
+    <h3 class="sub">食べたもの・買ったもの</h3>
+    <ul class="items">
+      <li>ご当地グルメ：とり天定食（こつこつ庵）— 1,100円 ※グッズは確認できず、グルメのみ</li>
+    </ul>
+    <h3 class="sub">収支</h3>
+    <table class="acct">
+      <tr><td>運賃（高速バス）</td><td>4,200円</td></tr>
+      <tr><td>宿泊（東横INN大分駅前）</td><td>8,100円（推定）</td></tr>
+      <tr class="total"><td>6日目 合計</td><td>12,300円</td></tr>
+      <tr><td>累計</td><td>73,248円</td></tr>
+    </table>
+    <h3 class="sub">今夜の宿</h3>
+    <p class="stay">東横INN大分駅前 — 8,100円（推定）</p>
+  </article>
+
+  <article class="day" id="day7">
+    <div class="date">2026年11月16日（月）</div>
+    <h2><span class="dnum">7日目</span> 大分→宮崎の旅（宮崎泊）</h2>
+    <p>大分を10時06分に出る特急「にちりんシーガイア」で、乗り換えなしのまま13時36分に宮崎へ。日豊本線を南へ下る、海の見える区間の多い移動でした。</p>
+    <p>宮崎駅ではアミュプラザみやざきと、駅高架下のひむかきらめき市場を探しましたが、宮崎限定のちいかわグッズは見つからず、宮崎県もグルメのみの記録に。夕方、味のおぐら本店でチキン南蛮（1,400円）をいただきました。九州はこれで7県すべて到達です。次は鹿児島へ向かいます。</p>
+    <div class="photos">
+      <figure><img src="photos/29.jpg" alt="宮崎駅"><figcaption>宮崎駅</figcaption></figure>
+      <figure><img src="photos/32.jpg" alt="味のおぐら本店"><figcaption>味のおぐら本店</figcaption></figure>
+    </div>
+    <h3 class="sub">食べたもの・買ったもの</h3>
+    <ul class="items">
+      <li>ご当地グルメ：チキン南蛮（味のおぐら本店）— 1,400円 ※グッズは見つからず、グルメのみ</li>
+    </ul>
+    <h3 class="sub">収支</h3>
+    <table class="acct">
+      <tr><td>運賃（特急にちりんシーガイア）</td><td>6,910円</td></tr>
+      <tr><td>宿泊（東横INN宮崎駅前）</td><td>9,766円（推定）</td></tr>
+      <tr class="total"><td>7日目 合計</td><td>16,676円</td></tr>
+      <tr><td>累計</td><td>89,924円</td></tr>
+    </table>
+    <h3 class="sub">今夜の宿</h3>
+    <p class="stay">東横INN宮崎駅前 — 9,766円（推定）</p>
+    <p class="note">交通：特急にちりんシーガイアは大分→宮崎を乗り換えなしで運行。この日の記録をもとに、翌11月17日は特急きりしま5号で鹿児島へ出発します。</p>
+  </article>
+
+  <footer>
+    <p>まるの旅は続いています。この日記は旅の進行に合わせて追記されます。</p>
+    <p>地図で見る → <a href="https://noyama-shiitake.github.io/maru-trip-player/prototype.html">まるの旅</a></p>
+  </footer>
+</div>
+</body>
+</html>
