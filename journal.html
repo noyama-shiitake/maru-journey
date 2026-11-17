@@ -37,6 +37,15 @@
   .stay{ font-size:14.5px; }
   .note{ font-size:13px; color:var(--muted); }
   footer{ text-align:center; color:rgba(255,250,240,.72); font-size:13px; margin-top:34px; } footer a{ color:#ffd9a8; font-weight:700; }
+  .pager{ display:flex; flex-direction:column; align-items:center; gap:9px; margin:20px auto 0; max-width:520px; }
+  .pager .row1{ display:flex; gap:10px; width:100%; }
+  .pager .row2{ display:flex; align-items:center; gap:16px; }
+  .pg-btn{ background:#eef3f5; border:1px solid #cfdde3; color:#33525f; border-radius:999px; padding:9px 18px; font-size:14px; font-weight:700; cursor:pointer; white-space:nowrap; font-family:inherit; }
+  .pg-btn:disabled{ opacity:.4; cursor:default; }
+  .pg-select{ flex:1; min-width:0; padding:9px 12px; border-radius:10px; border:1px solid #cfdde3; background:#fff; font-size:14.5px; font-family:inherit; color:var(--ink); }
+  .pg-count{ color:rgba(255,250,240,.88); font-size:14px; font-weight:700; letter-spacing:.05em; }
+  body.paging article.day{ display:none; }
+  body.paging article.day.active{ display:block; }
   @media (max-width:560px){ .photos{ grid-template-columns:1fr 1fr; } header.top h1{ font-size:24px; } }
 </style>
 </head>
@@ -54,6 +63,17 @@
     </div>
     <nav class="links">旅の様子は地図でも見られます → <a href="https://noyama-shiitake.github.io/maru-trip-player/prototype.html">まるの旅（地図）</a></nav>
   </header>
+
+  <div class="pager" id="pager" hidden>
+    <div class="row1">
+      <button type="button" class="pg-btn" id="pgPrev">← 前の日</button>
+      <select class="pg-select" id="pgSelect" aria-label="日を選ぶ"></select>
+    </div>
+    <div class="row2">
+      <span class="pg-count" id="pgCount"></span>
+      <button type="button" class="pg-btn" id="pgNext">次の日 →</button>
+    </div>
+  </div>
 
   <article class="day" id="day1">
     <div class="date">2026年11月10日（火）</div>
@@ -240,5 +260,44 @@
     <p>地図で見る → <a href="https://noyama-shiitake.github.io/maru-trip-player/prototype.html">まるの旅</a></p>
   </footer>
 </div>
+<script>
+(function(){
+  var days=[].slice.call(document.querySelectorAll('article.day'));
+  if(days.length<2) return;
+  var pager=document.getElementById('pager'),
+      sel=document.getElementById('pgSelect'),
+      prev=document.getElementById('pgPrev'),
+      next=document.getElementById('pgNext'),
+      count=document.getElementById('pgCount');
+  if(!pager||!sel||!prev||!next||!count) return;
+  days.forEach(function(d,i){
+    var h=d.querySelector('h2'), dn=d.querySelector('.dnum'), dt=d.querySelector('.date');
+    var title=h?h.textContent.replace(/\s+/g,' ').trim():'';
+    if(dn) title=title.replace(dn.textContent.trim(),'').trim();
+    var o=document.createElement('option');
+    o.value=i;
+    o.textContent='Day '+(i+1)+' '+title+(dt?'｜'+dt.textContent.replace(/\s+/g,' ').trim():'');
+    sel.appendChild(o);
+  });
+  document.body.classList.add('paging');
+  pager.hidden=false;
+  var cur=days.length-1;
+  var m=/day(\d+)/.exec(location.hash||'');
+  if(m){ var n=parseInt(m[1],10)-1; if(n>=0&&n<days.length) cur=n; }
+  function show(i){
+    cur=Math.max(0,Math.min(days.length-1,i));
+    days.forEach(function(d,j){ d.classList.toggle('active', j===cur); });
+    sel.value=cur;
+    count.textContent=(cur+1)+' / '+days.length+' 日';
+    prev.disabled=(cur===0);
+    next.disabled=(cur===days.length-1);
+    if(window.history&&history.replaceState) history.replaceState(null,'','#day'+(cur+1));
+  }
+  prev.addEventListener('click',function(){ show(cur-1); });
+  next.addEventListener('click',function(){ show(cur+1); });
+  sel.addEventListener('change',function(){ show(parseInt(sel.value,10)); });
+  show(cur);
+})();
+</script>
 </body>
 </html>
