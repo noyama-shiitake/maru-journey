@@ -47,6 +47,7 @@
   .pg-count{ color:rgba(255,250,240,.88); font-size:14px; font-weight:700; letter-spacing:.05em; }
   body.paging article.day{ display:none; }
   body.paging article.day.active{ display:block; }
+  .loadmsg{ color:rgba(255,250,240,.88); text-align:center; padding:34px 10px; font-size:14.5px; }
   @media (max-width:560px){ .photos{ grid-template-columns:1fr 1fr; } header.top h1{ font-size:24px; } }
 </style>
 </head>
@@ -57,10 +58,10 @@
     <h1>まるのご当地ちいかわめぐり｜旅の日記</h1>
     <p class="lead">日本全国にいっぱいある美味しいもの、見どころ、いろんなところへ遊びに行きます。見ている人も旅をしたくなるような、小さな冒険記を毎日書きます。</p>
     <div class="stats">
-      <span>到達 <b>14 / 47</b> 都道府県</span>
-      <span>グッズ入手 <b>7</b> 県</span>
-      <span>グルメのみ <b>7</b> 県</span>
-      <span>累計（全ての収支）<b>179,438円</b></span>
+      <span>到達 <b id="stCollected">— / 47</b> 都道府県</span>
+      <span>グッズ入手 <b id="stGoods">—</b> 県</span>
+      <span>グルメのみ <b id="stGourmet">—</b> 県</span>
+      <span>累計（全ての収支）<b id="stCumulative">—</b></span>
     </div>
     <nav class="links">旅の様子は地図でも見られます → <a href="https://noyama-shiitake.github.io/maru-trip-player/prototype.html">まるの旅（地図）</a></nav>
   </header>
@@ -76,293 +77,7 @@
     </div>
   </div>
 
-  <article class="day" id="day1">
-    <div class="date">2026年11月10日（火）</div>
-    <h2><span class="dnum">1日目</span> 奈良・京都の旅（帰宅）</h2>
-    <p>旅の始まりは夜でした。19時50分、大阪を出発。近鉄電車で奈良へ向かい、20時24分に近鉄奈良駅に着きました。奈良公園では鹿たちがのんびりしていて、興福寺と東大寺をまわりながら、最初のご当地ちいかわ、奈良限定「鹿」ぬいぐるみキーチェーンをゲット。柿の葉寿司もいただきました。</p>
-    <p>そのまま大和西大寺で乗り換えて京都へ。21時50分に京都駅に着いて、京都限定「抹茶ソフト」のうさぎと、生八つ橋を確保。23時38分、大阪に帰着しました。初日から2県制覇です。</p>
-    <div class="photos">
-      <figure><img src="photos/01.jpg" alt="近鉄奈良駅"><figcaption>近鉄奈良駅</figcaption></figure>
-      <figure><img src="photos/02.jpg" alt="奈良公園の鹿と"><figcaption>奈良公園の鹿と</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地ちいかわ：奈良限定「鹿」ぬいぐるみキーチェーン — 1,540円（概算）</li>
-      <li>ご当地グルメ：柿の葉寿司（奈良）— 1,540円（概算）</li>
-      <li>ご当地ちいかわ：京都限定「抹茶ソフト」うさぎ — 1,540円（概算）</li>
-      <li>ご当地グルメ：生八つ橋（京都）— 750円（概算）</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（近鉄ほか）</td><td>2,580円</td></tr>
-      <tr><td>柿の葉寿司（奈良）</td><td>1,540円（概算）</td></tr>
-      <tr><td>ご当地ちいかわ（奈良限定「鹿」ぬいぐるみキーチェーン）</td><td>1,540円（概算）</td></tr>
-      <tr><td>ご当地ちいかわ（京都限定「抹茶ソフト」うさぎ）</td><td>1,540円（概算）</td></tr>
-      <tr><td>生八つ橋（京都）</td><td>750円（概算）</td></tr>
-      <tr><td>宿泊（自宅）</td><td>0円</td></tr>
-      <tr class="total"><td>1日目 合計</td><td>7,950円</td></tr>
-      <tr><td>累計</td><td>7,950円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">大阪（自宅）— 0円</p>
-  </article>
-
-  <article class="day" id="day2">
-    <div class="date">2026年11月11日（水）</div>
-    <h2><span class="dnum">2日目</span> 兵庫・岡山の旅（岡山泊）</h2>
-    <p>朝9時すぎに大阪を出て、地下鉄とJRを乗り継いで三ノ宮へ。バスでイオンモール神戸北まで足をのばし、ちいかわ POP UP STORE で神戸限定のセーラーちいかわをゲットしました。お昼はそばめしです。</p>
-    <p>夕方、新神戸から新幹線で岡山へ。岡山駅で岡山限定「桃から生まれた桃太郎」ダイカットキーホルダーを入手し、えびめしを食べて、ヴィアイン岡山にチェックイン。西へ西へと進み始めた日でした。</p>
-    <div class="photos">
-      <figure><img src="photos/07.jpg" alt="イオンモール神戸北"><figcaption>イオンモール神戸北</figcaption></figure>
-      <figure><img src="photos/08.jpg" alt="岡山駅"><figcaption>岡山駅</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地ちいかわ：神戸限定 セーラーちいかわ（ちいかわ POP UP STORE、イオンモール神戸北）— 1,100円（概算）</li>
-      <li>ご当地グルメ：そばめし（神戸）— 1,000円（概算）</li>
-      <li>ご当地ちいかわ：岡山限定「桃から生まれた桃太郎」ダイカットキーホルダー — 495円</li>
-      <li>ご当地グルメ：えびめし（岡山）— 900円（概算）</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（地下鉄・JR・バス・新幹線）</td><td>8,290円</td></tr>
-      <tr><td>ご当地ちいかわ（神戸限定 セーラーちいかわ）</td><td>1,100円（概算）</td></tr>
-      <tr><td>そばめし（神戸）</td><td>1,000円（概算）</td></tr>
-      <tr><td>ご当地ちいかわ（岡山限定「桃太郎」ダイカットキーホルダー）</td><td>495円</td></tr>
-      <tr><td>えびめし（岡山）</td><td>900円（概算）</td></tr>
-      <tr><td>宿泊（ヴィアイン岡山）</td><td>5,720円（推定）</td></tr>
-      <tr class="total"><td>2日目 合計</td><td>17,505円</td></tr>
-      <tr><td>累計</td><td>25,455円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">ヴィアイン岡山 — 5,720円（推定）</p>
-  </article>
-
-  <article class="day" id="day3">
-    <div class="date">2026年11月12日（木）</div>
-    <h2><span class="dnum">3日目</span> 広島・山口・福岡の旅（博多泊）</h2>
-    <p>岡山を9時04分に出て、新幹線で広島へ。駅の ekie で広島限定「牡蠣」ダイカットキーホルダーをゲットし、広島電鉄で原爆ドームへ。広島風お好み焼きも味わいました。</p>
-    <p>午後は新山口へ。「ふく」のちいかわは駅で確認できず、山口県はグルメのみの記録に。瓦そばをいただきました。夕方の新幹線で博多に着くと、博多駅で福岡限定「あまおう」ぬいぐるみキーチェーンを入手。夜は博多ラーメンで締めました。3県をまわった、いちばん移動の多い日です。</p>
-    <div class="photos">
-      <figure><img src="photos/12.jpg" alt="原爆ドーム"><figcaption>原爆ドーム</figcaption></figure>
-      <figure><img src="photos/14.jpg" alt="博多駅"><figcaption>博多駅</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地ちいかわ：広島限定「牡蠣」ダイカットキーホルダー（広島駅 ekie）— 495円</li>
-      <li>ご当地グルメ：広島風お好み焼き — 950円（概算）</li>
-      <li>ご当地グルメ：瓦そば（山口）— 1,410円（概算）※グッズは駅で確認できず、グルメのみ</li>
-      <li>ご当地ちいかわ：福岡限定「あまおう」ぬいぐるみキーチェーン（博多駅）— 1,540円（概算）</li>
-      <li>ご当地グルメ：博多ラーメン — 800円（概算）</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（新幹線・広島電鉄ほか）</td><td>18,060円</td></tr>
-      <tr><td>ご当地ちいかわ（広島限定「牡蠣」ダイカットキーホルダー）</td><td>495円</td></tr>
-      <tr><td>広島風お好み焼き</td><td>950円（概算）</td></tr>
-      <tr><td>瓦そば（山口）</td><td>1,410円（概算）</td></tr>
-      <tr><td>ご当地ちいかわ（福岡限定「あまおう」ぬいぐるみキーチェーン）</td><td>1,540円（概算）</td></tr>
-      <tr><td>博多ラーメン</td><td>800円（概算）</td></tr>
-      <tr><td>宿泊（博多ターミナルホテル）</td><td>5,300円（推定）</td></tr>
-      <tr class="total"><td>3日目 合計</td><td>28,555円</td></tr>
-      <tr><td>累計</td><td>54,010円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">博多ターミナルホテル — 5,300円（推定）</p>
-  </article>
-
-  <article class="day" id="day4">
-    <div class="date">2026年11月13日（金）</div>
-    <h2><span class="dnum">4日目</span> 佐賀・長崎の旅（長崎泊）</h2>
-    <p>博多を10時03分に出て、10時41分に佐賀へ。佐賀では いかしゅうまい を堪能しました（佐賀はグルメのみの記録です）。12時33分発のリレーかもめ25号で武雄温泉へ、乗り換えて13時24分に長崎に着きました。</p>
-    <p>長崎では蘇州林のちゃんぽんを食べて、眼鏡橋をのんびり散策。19時にホテルセントヒル長崎へチェックインしたあと、夜は稲佐山山頂展望台まで上がって夜景を見ました。長崎もグルメのみですが、忘れられない夜になりました。</p>
-    <div class="photos">
-      <figure><img src="photos/18.jpg" alt="眼鏡橋"><figcaption>眼鏡橋</figcaption></figure>
-      <figure><img src="photos/20.jpg" alt="稲佐山の夜景"><figcaption>稲佐山の夜景</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地グルメ：いかしゅうまい（佐賀）— 660円（概算）※グルメのみ</li>
-      <li>ご当地グルメ：ちゃんぽん（蘇州林、長崎）— 1,350円 ※グルメのみ</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（特急リレーかもめほか）</td><td>6,680円</td></tr>
-      <tr><td>いかしゅうまい（佐賀）</td><td>660円（概算）</td></tr>
-      <tr><td>ちゃんぽん（蘇州林、長崎）</td><td>1,350円</td></tr>
-      <tr><td>宿泊（ホテルセントヒル長崎）</td><td>3,890円（推定）</td></tr>
-      <tr class="total"><td>4日目 合計</td><td>12,580円</td></tr>
-      <tr><td>累計</td><td>66,590円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">ホテルセントヒル長崎 — 3,890円（推定）</p>
-  </article>
-
-  <article class="day" id="day5">
-    <div class="date">2026年11月14日（土）</div>
-    <h2><span class="dnum">5日目</span> 熊本の旅（熊本泊）</h2>
-    <p>長崎駅前を10時50分に出る高速バス「りんどう号」に乗り、14時36分に熊本駅前へ。約3時間46分のバス旅でした。熊本では市電に乗って通町筋のくまモンスクエアとアミュプラザくまもとへ。市電の乗り心地がとても良かったです。</p>
-    <p>肥後よかモン市場などを探しましたが、熊本限定のちいかわグッズは見つからず、熊本県はグルメのみの記録に。熊本ラーメンをいただいて、19時に東横INN熊本駅前へチェックインしました。</p>
-    <div class="photos">
-      <figure><img src="photos/21.jpg" alt="熊本駅"><figcaption>熊本駅</figcaption></figure>
-      <figure><img src="photos/23.jpg" alt="くまモンスクエア"><figcaption>くまモンスクエア</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地グルメ：熊本ラーメン — 900円（概算）※グッズは見つからず、グルメのみ</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（高速バス・市電）</td><td>4,600円</td></tr>
-      <tr><td>熊本ラーメン</td><td>900円（概算）</td></tr>
-      <tr><td>宿泊（東横INN熊本駅前）</td><td>5,828円（推定）</td></tr>
-      <tr class="total"><td>5日目 合計</td><td>11,328円</td></tr>
-      <tr><td>累計</td><td>77,918円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">東横INN熊本駅前 — 5,828円（推定）</p>
-  </article>
-
-  <article class="day" id="day6">
-    <div class="date">2026年11月15日（日）</div>
-    <h2><span class="dnum">6日目</span> 大分の旅（大分泊）</h2>
-    <p>熊本駅前を10時39分に出る高速バス「やまびこ号」で大分へ。途中、道の駅すごうで30分の休憩をはさみ、14時39分に大分に着きました。阿蘇を越える山道のドライブでした。</p>
-    <p>大分駅の豊後にわさき市場とアミュプラザ大分で温泉モチーフのご当地ちいかわを探しましたが、買える在庫は確認できず、大分県もグルメのみの記録に。夕方は「こつこつ庵」でとり天定食（1,100円）をいただきました。</p>
-    <div class="photos">
-      <figure><img src="photos/25.jpg" alt="大分駅"><figcaption>大分駅</figcaption></figure>
-      <figure><img src="photos/28.jpg" alt="こつこつ庵"><figcaption>こつこつ庵</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地グルメ：とり天定食（こつこつ庵）— 1,100円 ※グッズは確認できず、グルメのみ</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（高速バス）</td><td>4,200円</td></tr>
-      <tr><td>とり天定食（こつこつ庵）</td><td>1,100円</td></tr>
-      <tr><td>宿泊（東横INN大分駅前）</td><td>8,100円（推定）</td></tr>
-      <tr class="total"><td>6日目 合計</td><td>13,400円</td></tr>
-      <tr><td>累計</td><td>91,318円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">東横INN大分駅前 — 8,100円（推定）</p>
-  </article>
-
-  <article class="day" id="day7">
-    <div class="date">2026年11月16日（月）</div>
-    <h2><span class="dnum">7日目</span> 大分→宮崎の旅（宮崎泊）</h2>
-    <p>大分を10時06分に出る特急「にちりんシーガイア」で、乗り換えなしのまま13時36分に宮崎へ。日豊本線を南へ下る、海の見える区間の多い移動でした。</p>
-    <p>宮崎駅ではアミュプラザみやざきと、駅高架下のひむかきらめき市場を探しましたが、宮崎限定のちいかわグッズは見つからず、宮崎県もグルメのみの記録に。夕方、味のおぐら本店でチキン南蛮（1,400円）をいただきました。九州はこれで7県すべて到達です。次は鹿児島へ向かいます。</p>
-    <div class="photos">
-      <figure><img src="photos/29.jpg" alt="宮崎駅"><figcaption>宮崎駅</figcaption></figure>
-      <figure><img src="photos/32.jpg" alt="味のおぐら本店"><figcaption>味のおぐら本店</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地グルメ：チキン南蛮（味のおぐら本店）— 1,400円 ※グッズは見つからず、グルメのみ</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（特急にちりんシーガイア）</td><td>6,910円</td></tr>
-      <tr><td>チキン南蛮（味のおぐら本店）</td><td>1,400円</td></tr>
-      <tr><td>宿泊（東横INN宮崎駅前）</td><td>9,766円（推定）</td></tr>
-      <tr class="total"><td>7日目 合計</td><td>18,076円</td></tr>
-      <tr><td>累計</td><td>109,394円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">東横INN宮崎駅前 — 9,766円（推定）</p>
-    <p class="note">交通：特急にちりんシーガイアは大分→宮崎を乗り換えなしで運行。この日の記録をもとに、翌11月17日は特急きりしま5号で鹿児島へ出発します。</p>
-  </article>
-
-  <article class="day" id="day8">
-    <div class="date">2026年11月17日（火）</div>
-    <h2><span class="dnum">8日目</span> 宮崎→鹿児島の旅（鹿児島泊）</h2>
-    <p>宮崎を9時20分に出る特急「きりしま5号」で、11時28分に鹿児島中央へ。雨ときどきくもりの一日でした。アミュプラザ鹿児島と駅のおみやげ店で「桜島」モチーフのご当地ちいかわを探しましたが、買える在庫は確認できず、鹿児島県もグルメのみの記録に。</p>
-    <p>お昼は市電で天文館へ。天文館むじゃき本店で白熊（しろくま）をいただきました。夕食は寿庵 中央駅西口店で黒豚料理。16時に東横INN鹿児島中央駅東口へチェックインしました。九州はこれで8県すべて到達です。次は海を越えて沖縄へ向かいます。</p>
-    <div class="photos">
-      <figure><img src="photos/33.jpg" alt="鹿児島中央駅"><figcaption>鹿児島中央駅</figcaption></figure>
-      <figure><img src="photos/35.jpg" alt="天文館むじゃき本店"><figcaption>天文館むじゃき本店</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地グルメ：白熊（しろくま）（天文館むじゃき本店）— 900円 ※グッズは確認できず、グルメのみ</li>
-      <li>ご当地グルメ：黒豚料理（寿庵 中央駅西口店）— 4,000円（概算）</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（特急きりしま5号・市電）</td><td>5,060円</td></tr>
-      <tr><td>白熊（しろくま）（天文館むじゃき本店）</td><td>900円</td></tr>
-      <tr><td>黒豚料理（寿庵 中央駅西口店）</td><td>4,000円（概算）</td></tr>
-      <tr><td>宿泊（東横INN鹿児島中央駅東口）</td><td>4,988円（推定）</td></tr>
-      <tr class="total"><td>8日目 合計</td><td>14,948円</td></tr>
-      <tr><td>累計</td><td>124,342円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">東横INN鹿児島中央駅東口 — 4,988円（推定）</p>
-  </article>
-
-  <article class="day" id="day9">
-    <div class="date">2026年11月18日（水）</div>
-    <h2><span class="dnum">9日目</span> 鹿児島→沖縄の旅（那覇泊）</h2>
-    <p>7時25分、鹿児島中央駅を出る南国交通の空港連絡バスで鹿児島空港へ。ソラシドエアSNA83便は整備作業のため10分遅れ、9時30分発で11時5分に那覇空港へ到着しました。ゆいレールで美栄橋へ向かい、「いつでも朝ごはん 本店」で沖縄そばの朝そばをいただきました。海を越えて、ついに沖縄です。</p>
-    <p>国際通り・平和通りで沖縄限定ちいかわを探して、プチミーII 1階でシーサーのマスコットを発見！沖縄限定グッズは7県目です。御菓子御殿でお土産の紅いもタルトを選んで、15時5分に東横INN那覇国際通り美栄橋駅へチェックイン。波上宮では朱い社殿と青い海を眺めて、夕食はゆうなんぎい。1970年から続く沖縄料理の老舗でラフテーをいただきました。青いフォーク、タツノオトシゴみたいにくねっとして、生き物っぽいわ。まるの相棒やから、元気なんかもしれん。</p>
-    <p class="haiku">さすまたが<br>タツノオトシゴ<br>みたいやな</p>
-    <div class="photos">
-      <figure><img src="photos/38.jpg" alt="那覇空港"><figcaption>那覇空港</figcaption></figure>
-      <figure><img src="photos/41.jpg" alt="御菓子御殿 国際通り松尾店"><figcaption>御菓子御殿 国際通り松尾店</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地グルメ：沖縄そば（朝そば）（いつでも朝ごはん 本店）— 900円</li>
-      <li>ご当地ちいかわ：沖縄限定「シーサー」マスコット — 1,540円</li>
-      <li>お土産：元祖紅いもタルト 6個入（御菓子御殿）— 1,296円</li>
-      <li>ご当地グルメ：夕食（ラフテーほか）（ゆうなんぎい）— 2,500円（概算）</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（空港連絡バス・ソラシドエアSNA83・ゆいレール）</td><td>20,260円（概算含む）</td></tr>
-      <tr><td>沖縄そば（朝そば）（いつでも朝ごはん 本店）</td><td>900円</td></tr>
-      <tr><td>ご当地ちいかわ（沖縄限定「シーサー」マスコット）</td><td>1,540円</td></tr>
-      <tr><td>お土産（元祖紅いもタルト 6個入）</td><td>1,296円</td></tr>
-      <tr><td>夕食（ゆうなんぎい）</td><td>2,500円（概算）</td></tr>
-      <tr><td>宿泊（東横INN那覇国際通り美栄橋駅）</td><td>8,260円（推定）</td></tr>
-      <tr class="total"><td>9日目 合計</td><td>34,756円</td></tr>
-      <tr><td>累計</td><td>159,098円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">東横INN那覇国際通り美栄橋駅 — 8,260円（推定）</p>
-  </article>
-
-  <article class="day" id="day10">
-    <div class="date">2026年11月19日（木）</div>
-    <h2><span class="dnum">10日目</span> 那覇→美ら海水族館の日帰り（那覇泊）</h2>
-    <p>朝6時20分にホテルを出て、国際通りを歩いて県庁北口へ。やんばる急行バス6時40分発で、8時47分に沖縄美ら海水族館へ着きました。7,500トンの大水槽「黒潮の海」でジンベエザメとマンタがゆったり泳ぐのを眺めて、4階のレストランINOHで海を見ながらランチビュッフェをいただきました。</p>
-    <p>13時のオキちゃん劇場では、イルカたちが海と伊江島を背景に大きくジャンプ。15時のジンベエザメ給餌解説では、大きな体を立ち上げるようにしてエサを食べる姿にびっくりしました。出口のショップBlue Mantaでジンベエザメグッズをお土産に選んで、17時13分発の最終バスで那覇へ。夜は国際通りの郷土料理ここでゴーヤーチャンプルーをいただきました。沖縄は昨日収集済みなので、今日は新しい県の収集なし。進捗は14/47のままです。</p>
-    <p class="haiku">イルカ跳ぶ<br>伊江島の海<br>秋の昼</p>
-    <div class="photos">
-      <figure><img src="photos/45.jpg" alt="沖縄美ら海水族館"><figcaption>沖縄美ら海水族館</figcaption></figure>
-      <figure><img src="photos/48.jpg" alt="黒潮の海（沖縄美ら海水族館）"><figcaption>黒潮の海（沖縄美ら海水族館）</figcaption></figure>
-    </div>
-    <h3 class="sub">食べたもの・買ったもの</h3>
-    <ul class="items">
-      <li>ご当地グルメ：ランチビュッフェ（レストランINOH）— 2,600円</li>
-      <li>お土産：ジンベエザメグッズ（Blue Manta）— 1,000円（概算）</li>
-      <li>ご当地グルメ：夕食（ゴーヤーチャンプルーほか）（郷土料理ここ 国際通り店）— 2,500円（概算）</li>
-    </ul>
-    <h3 class="sub">収支</h3>
-    <table class="acct">
-      <tr><td>運賃（やんばる急行バス往復）</td><td>3,800円</td></tr>
-      <tr><td>入館料（沖縄美ら海水族館）</td><td>2,180円</td></tr>
-      <tr><td>ランチビュッフェ（レストランINOH）</td><td>2,600円</td></tr>
-      <tr><td>お土産（ジンベエザメグッズ）</td><td>1,000円（概算）</td></tr>
-      <tr><td>夕食（郷土料理ここ 国際通り店）</td><td>2,500円（概算）</td></tr>
-      <tr><td>宿泊（東横INN那覇国際通り美栄橋駅）</td><td>8,260円（推定）</td></tr>
-      <tr class="total"><td>10日目 合計</td><td>20,340円</td></tr>
-      <tr><td>累計</td><td>179,438円</td></tr>
-    </table>
-    <h3 class="sub">今夜の宿</h3>
-    <p class="stay">東横INN那覇国際通り美栄橋駅 — 8,260円（推定）</p>
-  </article>
+  <div id="days"><p class="loadmsg">日記を読み込んでいます…</p></div>
 
   <footer>
     <p>まるの旅は続いています。この日記は旅の進行に合わせて追記されます。</p>
@@ -372,41 +87,57 @@
 </div>
 <script>
 (function(){
-  var days=[].slice.call(document.querySelectorAll('article.day'));
-  if(days.length<2) return;
-  var pager=document.getElementById('pager'),
-      sel=document.getElementById('pgSelect'),
-      prev=document.getElementById('pgPrev'),
-      next=document.getElementById('pgNext'),
-      count=document.getElementById('pgCount');
-  if(!pager||!sel||!prev||!next||!count) return;
-  days.forEach(function(d,i){
-    var h=d.querySelector('h2'), dn=d.querySelector('.dnum'), dt=d.querySelector('.date');
-    var title=h?h.textContent.replace(/\s+/g,' ').trim():'';
-    if(dn) title=title.replace(dn.textContent.trim(),'').trim();
-    var o=document.createElement('option');
-    o.value=i;
-    o.textContent='Day '+(i+1)+' '+title+(dt?'｜'+dt.textContent.replace(/\s+/g,' ').trim():'');
-    sel.appendChild(o);
-  });
-  document.body.classList.add('paging');
-  pager.hidden=false;
-  var cur=days.length-1;
-  var m=/day(\d+)/.exec(location.hash||'');
-  if(m){ var n=parseInt(m[1],10)-1; if(n>=0&&n<days.length) cur=n; }
-  function show(i){
-    cur=Math.max(0,Math.min(days.length-1,i));
-    days.forEach(function(d,j){ d.classList.toggle('active', j===cur); });
-    sel.value=cur;
-    count.textContent=(cur+1)+' / '+days.length+' 日';
-    prev.disabled=(cur===0);
-    next.disabled=(cur===days.length-1);
-    if(window.history&&history.replaceState) history.replaceState(null,'','#day'+(cur+1));
+  var DATA_URL = "https://gist.githubusercontent.com/noyama-shiitake/7e4439431927c3b513b65ad590ec89ad/raw/maru-journal-data.json";
+  function fmtYen(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"円"; }
+  function initPager(){
+    var days=[].slice.call(document.querySelectorAll('article.day'));
+    if(days.length<2) return;
+    var pager=document.getElementById('pager'),
+        sel=document.getElementById('pgSelect'),
+        prev=document.getElementById('pgPrev'),
+        next=document.getElementById('pgNext'),
+        count=document.getElementById('pgCount');
+    if(!pager||!sel||!prev||!next||!count) return;
+    days.forEach(function(d,i){
+      var h=d.querySelector('h2'), dn=d.querySelector('.dnum'), dt=d.querySelector('.date');
+      var title=h?h.textContent.replace(/\s+/g,' ').trim():'';
+      if(dn) title=title.replace(dn.textContent.trim(),'').trim();
+      var o=document.createElement('option');
+      o.value=i;
+      o.textContent='Day '+(i+1)+' '+title+(dt?'｜'+dt.textContent.replace(/\s+/g,' ').trim():'');
+      sel.appendChild(o);
+    });
+    document.body.classList.add('paging');
+    pager.hidden=false;
+    var cur=days.length-1;
+    var m=/day(\d+)/.exec(location.hash||'');
+    if(m){ var n=parseInt(m[1],10)-1; if(n>=0&&n<days.length) cur=n; }
+    function show(i){
+      cur=Math.max(0,Math.min(days.length-1,i));
+      days.forEach(function(d,j){ d.classList.toggle('active', j===cur); });
+      sel.value=cur;
+      count.textContent=(cur+1)+' / '+days.length+' 日';
+      prev.disabled=(cur===0);
+      next.disabled=(cur===days.length-1);
+      if(window.history&&history.replaceState) history.replaceState(null,'','#day'+(cur+1));
+    }
+    prev.addEventListener('click',function(){ show(cur-1); });
+    next.addEventListener('click',function(){ show(cur+1); });
+    sel.addEventListener('change',function(){ show(parseInt(sel.value,10)); });
+    show(cur);
   }
-  prev.addEventListener('click',function(){ show(cur-1); });
-  next.addEventListener('click',function(){ show(cur+1); });
-  sel.addEventListener('change',function(){ show(parseInt(sel.value,10)); });
-  show(cur);
+  fetch(DATA_URL, {cache:"no-store"}).then(function(r){ return r.json(); }).then(function(j){
+    var s=j.stats||{};
+    if(s.collected!=null) document.getElementById('stCollected').textContent=s.collected+" / "+(s.totalPrefectures||47);
+    if(s.goods!=null) document.getElementById('stGoods').textContent=s.goods;
+    if(s.gourmetOnly!=null) document.getElementById('stGourmet').textContent=s.gourmetOnly;
+    if(s.cumulative!=null) document.getElementById('stCumulative').textContent=fmtYen(s.cumulative);
+    var box=document.getElementById('days');
+    box.innerHTML=(j.days||[]).map(function(d){ return d.html; }).join("\n");
+    initPager();
+  }).catch(function(e){
+    document.getElementById('days').innerHTML='<p class="loadmsg">日記を読み込めませんでした。通信状態を確認して、ページを再読み込みしてみてください。</p>';
+  });
 })();
 </script>
 </body>
